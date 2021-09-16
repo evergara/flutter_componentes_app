@@ -1,12 +1,29 @@
 import 'package:flutter/material.dart';
 
 class HomePageTemp extends StatelessWidget {
-  const HomePageTemp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('home temp'),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Component App'),
+        ),
+        body: ListView(
+          children: <Widget>[
+            ListTile(
+              title: Text('Lista de registros'),
+            ),
+            Divider(),
+            ListTile(
+              title: Text('Lista de registros'),
+            ),
+            Divider(),
+            ListTile(
+              title: Text('Lista de registros'),
+            ),
+            Divider()
+          ],
+        )
     );
   }
 }
