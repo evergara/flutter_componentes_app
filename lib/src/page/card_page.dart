@@ -28,7 +28,41 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardWidget2() {
+    final card = Container(
+      child: Column(
+        children: <Widget>[
+          FadeInImage(
+            placeholder: AssetImage('assets/loading/preloader.gif'),
+            image: NetworkImage(urlImagen),
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 300.0,
+            fit: BoxFit.cover,
+          ),
+          Container(
+              padding: EdgeInsets.all(10.0), child: Text('Imagen de internet')),
+        ],
+      ),
+    );
+    return Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15.0),
+            color: Colors.white,
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 10.0,
+                  spreadRadius: 2.0,
+                  offset: Offset(2.0, 10.0)),
+            ]),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15.0),
+          child: card,
+        ));
+  }
+
+  Widget _cardWidget4() {
     return Card(
+      clipBehavior: Clip.antiAlias,
       child: Column(
         children: <Widget>[
           FadeInImage(
@@ -61,21 +95,24 @@ class CardPage extends StatelessWidget {
 
   Widget _cardWidget1() {
     return Card(
+        elevation: 10.0,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         child: Column(
-      children: <Widget>[
-        ListTile(
-          leading: Icon(Icons.photo_album, color: Colors.blue),
-          title: Text('Card Page'),
-          subtitle: Text('Card description page'),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            TextButton(child: Text('Aceptar'), onPressed: () => {}),
-            TextButton(child: Text('Cancelar'), onPressed: () => {}),
+            ListTile(
+              leading: Icon(Icons.photo_album, color: Colors.blue),
+              title: Text('Card Page'),
+              subtitle: Text('Card description page'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(child: Text('Aceptar'), onPressed: () => {}),
+                TextButton(child: Text('Cancelar'), onPressed: () => {}),
+              ],
+            )
           ],
-        )
-      ],
-    ));
+        ));
   }
 }
