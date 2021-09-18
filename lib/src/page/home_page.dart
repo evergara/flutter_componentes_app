@@ -18,34 +18,33 @@ class HomePage extends StatelessWidget {
 
   Widget _listWidget() {
     return FutureBuilder(
-      future: menuProvider.cargarData(),
-      initialData: [],
-      builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot){
-        if (snapshot.data == null) {
-          return Container(
-            child: Text("Loading"),
-          );
-        }else{
-        List<dynamic> data = (snapshot.data as List<dynamic>).toList();
-          return ListView(
-              children: _ListItemListView(data)
-          );
-      }}
-    );
+        future: menuProvider.cargarData(),
+        initialData: [],
+        builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
+          if (snapshot.data == null) {
+            return Container(
+              child: Text("Loading"),
+            );
+          } else {
+            List<dynamic> data = (snapshot.data as List<dynamic>).toList();
+            return ListView(children: _ListItemListView(data, context));
+          }
+        });
   }
 
-  List<Widget> _ListItemListView(List<dynamic> data) {
-    final List<Widget>  opciones = [];
+  List<Widget> _ListItemListView(List<dynamic> data, BuildContext context) {
+    final List<Widget> opciones = [];
 
     data.forEach((item) {
       final widgetTemp = ListTile(
         title: Text(item['texto']),
         leading: getIcon(item['icon']),
-        trailing: Icon(Icons.keyboard_arrow_right,color: Colors.blue),
-        onTap: (){},
+        trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
+        onTap: () => Navigator.pushNamed(context, item['ruta']),
       );
-      opciones..add(widgetTemp)
-              ..add(Divider(height: 15.0));
+      opciones
+        ..add(widgetTemp)
+        ..add(Divider(height: 15.0));
     });
     return opciones;
   }
@@ -63,5 +62,4 @@ class HomePage extends StatelessWidget {
       )
     ];
   }
-
 }
