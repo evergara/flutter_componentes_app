@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       body: _listWidget(),
     );
   }
-
+/**
   Widget _listWidget() {
     return FutureBuilder(
         future: menuProvider.cargarData(),
@@ -26,9 +26,22 @@ class HomePage extends StatelessWidget {
               child: Text("Loading"),
             );
           } else {
-            List<dynamic> data = (snapshot.data as List<dynamic>).toList();
-            return ListView(children: _ListItemListView(data, context));
+            //List<dynamic> data = (snapshot.data as List<dynamic>).toList();
+            return ListView(children: _ListItemListView(snapshot.data, context));
           }
+        });
+  }
+*/
+
+  Widget _listWidget() {
+    return FutureBuilder(
+        future: menuProvider.cargarData(),
+        initialData: [],
+        builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
+          List<dynamic> data = (snapshot.data as List<dynamic>).toList();
+          return ListView(
+            children: _ListItemListView(data, context),
+          );
         });
   }
 
