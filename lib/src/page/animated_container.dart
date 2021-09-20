@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class animatedContainerPage extends StatefulWidget {
-  animatedContainerPage({Key? key}) : super(key: key);
+class AnimatedContainerPage extends StatefulWidget {
+  AnimatedContainerPage({Key? key}) : super(key: key);
 
   @override
-  _animatedContainerPageState createState() => _animatedContainerPageState();
+  _AnimatedContainerPageState createState() => _AnimatedContainerPageState();
 }
 
-class _animatedContainerPageState extends State<animatedContainerPage> {
+class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
   double _width = 50.0;
   double _height = 50.0;
   Color _color = Colors.pink;
