@@ -6,6 +6,7 @@ import 'package:componentes_app/src/page/alert_page.dart';
 import 'package:componentes_app/src/page/home_page.dart';
 import 'package:componentes_app/src/page/animated_container.dart';
 import 'package:componentes_app/src/page/Input_page.dart';
+import 'package:componentes_app/src/page/inputtwo_oage.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes() {
   return <String, WidgetBuilder>{
@@ -15,5 +16,6 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     'card': (BuildContext context) => CardPage(),
     'animatedContainer': (BuildContext context) => AnimatedContainerPage(),
     'input': (BuildContext context) => InputPage(),
+    'inputTwo': (BuildContext context) => InputTwoPage(),
   };
 }

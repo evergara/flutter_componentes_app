@@ -25,6 +25,12 @@
             "ruta" : "input",
             "icon" : "input",
             "texto": "Inputs"
+        },
+        {
+            "ruta" : "inputTwo",
+            "icon" : "input",
+            "texto": "Inputs 2"
         }
+
     ]
 }
