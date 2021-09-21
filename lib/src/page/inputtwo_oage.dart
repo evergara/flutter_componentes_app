@@ -26,14 +26,22 @@ class _InputTwoPageState extends State<InputTwoPage> {
   }
 
   Widget _crearInputDropdown() {
-    return DropdownButton<String>(
-      value: _opcionSeleccionada,
-      items: getOptionDropdown(),
-      onChanged: (String? opcionSeleccionada) {
-        setState(() {
-          _opcionSeleccionada = opcionSeleccionada!;
-        });
-      },
+    return Row(
+      children: <Widget>[
+        Icon(Icons.select_all),
+        SizedBox(width: 30.0),
+        Expanded(
+          child: DropdownButton<String>(
+            value: _opcionSeleccionada,
+            items: getOptionDropdown(),
+            onChanged: (String? opcionSeleccionada) {
+              setState(() {
+                _opcionSeleccionada = opcionSeleccionada!;
+              });
+            },
+          ),
+        ),
+      ],
     );
   }
 
