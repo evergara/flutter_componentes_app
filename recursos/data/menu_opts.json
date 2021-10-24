@@ -30,6 +30,11 @@
             "ruta" : "inputTwo",
             "icon" : "input",
             "texto": "Inputs 2"
+        },
+        {
+            "ruta" : "slider",
+            "icon" : "slider",
+            "texto": "Slider"
         }
 
     ]
