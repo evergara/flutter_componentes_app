@@ -8,6 +8,7 @@ import 'package:componentes_app/src/page/animated_container.dart';
 import 'package:componentes_app/src/page/Input_page.dart';
 import 'package:componentes_app/src/page/inputtwo_oage.dart';
 import 'package:componentes_app/src/page/slider_page.dart';
+import 'package:componentes_app/src/page/Listview_page.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes() {
   return <String, WidgetBuilder>{
@@ -19,5 +20,6 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     'input': (BuildContext context) => InputPage(),
     'inputTwo': (BuildContext context) => InputTwoPage(),
     'slider': (BuildContext context) => SliderPage(),
+    'listview': (BuildContext context) => ListaPage(),
   };
 }

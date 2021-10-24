@@ -36,6 +36,12 @@
             "icon" : "slider",
             "texto": "Slider"
         }
+        ,
+        {
+            "ruta" : "listview",
+            "icon" : "listview",
+            "texto": "listview"
+        }
 
     ]
 }
